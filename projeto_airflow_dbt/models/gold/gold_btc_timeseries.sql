@@ -4,4 +4,4 @@ SELECT
     high_s as high_g,
     low_s as low_g,
     close_s as close_g
-FROM silver.silver_btc_timeseries
+FROM {{ref("silver_btc_timeseries")}}

@@ -12,4 +12,4 @@ SELECT
     high_b as high_s,
     low_b as low_s,
     close_b as close_s 
-FROM bronze.bronze_btc_timeseries
+FROM {{ref("bronze_btc_timeseries")}}
