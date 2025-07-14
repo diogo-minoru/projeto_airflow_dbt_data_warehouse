@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: bronze_btc_timeseries
+    description: "Modelo bronze da tabela btc_timeseries, contém dados de abertura, máximo, minimo e fechamento da cotação do btc em dólar, dados coletados da api."
+    columns:
+      - name: datetime_b
+        description: "Dia do da cotação"
+        tests:
+          - unique
+          - not_null
+      - name: open_b
+        description: "Valor em dólar da abertura da cotação no dia"
+        tests:
+          - not_null
+      - name: high_b
+        description: "Valor em dólar do valor máximo da cotação no dia"
+      - name: low_b
+        description: "Valor em dólar do valor mínimo da cotação no dia"
+      - name: close_b
+        description: "Valor em dólar do fechamento da cotação no dia"
+      
