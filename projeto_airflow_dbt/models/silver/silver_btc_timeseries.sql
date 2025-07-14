@@ -1,3 +1,11 @@
+{{
+    config(
+        materialized = 'table',
+        unique_key = 'datetime_s',
+        tags = ['silver', 'fact', 'crm']
+    )
+}}
+
 SELECT 
     datetime_b as datetime_s,
     open_b as open_s,
