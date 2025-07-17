@@ -1,20 +1,8 @@
 models:
-  - name: gold_btc_timeseries
-    description: "Modelo gold da tabela btc_timeseries, contém dados de abertura, máximo, minimo e fechamento da cotação do btc em dólar, dados coletados da api."
+  - name: total_revenue_by_date
+    description: "Valor total da receita por data do pedido."
     columns:
-      - name: datetime_g
+      - name: orderdate
         description: "Dia do da cotação"
-        tests:
-          - unique
-          - not_null
-      - name: open_g
-        description: "Valor em dólar da abertura da cotação no dia"
-        tests:
-          - not_null
-      - name: high_g
-        description: "Valor em dólar do valor máximo da cotação no dia"
-      - name: low_g
-        description: "Valor em dólar do valor mínimo da cotação no dia"
-      - name: close_g
-        description: "Valor em dólar do fechamento da cotação no dia"
-      
+      - name: revenue_by_date
+        description: "Valor total da receita do dia na moeda antes da conversão."
