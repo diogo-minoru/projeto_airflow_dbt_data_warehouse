@@ -1,22 +1,97 @@
 version: 2
 
 models:
-  - name: bronze_btc_timeseries
-    description: "Modelo bronze da tabela btc_timeseries, contém dados de abertura, máximo, minimo e fechamento da cotação do btc em dólar, dados coletados da api."
+  - name: orders_bronze
+    description: "Modelo da tabela de pedidos."
     columns:
-      - name: datetime_b
-        description: "Dia do da cotação"
+      - name: orderkey
+        description: "Código único do pedido."
         tests:
           - unique
           - not_null
-      - name: open_b
-        description: "Valor em dólar da abertura da cotação no dia"
+      - name: customerkey
+        description: "Chave do cliente."
         tests:
           - not_null
-      - name: high_b
-        description: "Valor em dólar do valor máximo da cotação no dia"
-      - name: low_b
-        description: "Valor em dólar do valor mínimo da cotação no dia"
-      - name: close_b
-        description: "Valor em dólar do fechamento da cotação no dia"
-      
+      - name: orderdate
+        description: "Data do pedido."
+      - name: storekey
+        description: "Chave da loja."
+      - name: currencycode
+        description: "Código da moeda utilizada."
+  - name: orderrows_bronze
+    description: "Modelo da tabela de itens do pedido."
+    columns:
+      - name: orderkey
+        description: "Código do pedido."
+        tests:
+          - not_null
+      - name: linenumber
+        description: "Item do pedido."
+        tests:
+          - not_null
+      - name: productkey
+        description: "Código do produto."
+      - name: quantity
+        description: "Quantidade de itens do produto no pedido."
+      - name: netprice
+        description: "Valor líquido unitário."
+      - name: unitcost
+        description: "Custo unitário."
+  - name: customer_bronze
+    description: "Modelo da tabela de cadastro de clientes."
+    columns:
+      - name: customerkey
+        description: "Código único do cliente."
+        tests:
+          - unique
+          - not_null
+      - name: givenname
+        description: "Primeiro nome do cliente."
+        tests:
+          - not_null
+      - name: surname
+        description: "Sobrenome do cliente."
+      - name: city
+        description: "Cidade de residência do cliente."
+      - name: statefull
+        description: "Estado de residência do cliente."
+      - name: countryfull
+        description: "País de residência do cliente."
+      - name: age
+        description: "Idade do cliente."
+  - name: store_bronze
+    description: "Modelo da tabela de cadastro de lojas."
+    columns:
+      - name: storekey
+        description: "Código único da loja."
+        tests:
+          - unique
+          - not_null
+      - name: storecode
+        description: "Código de identificação da loja."
+        tests:
+          - not_null
+      - name: countryname
+        description: "País de localização da loja."
+      - name: description
+        description: "Nome da loja."
+      - name: state
+        description: "Estado de localização da loja."
+      - name: status
+        description: "Status da loja."
+  - name: currencyexchange_bronze
+    description: "Tabela de cotação das moedas para conversão."
+    columns:
+      - name: date
+        description: "Data da cotação."
+        tests:
+          - not_null
+      - name: fromcurrency
+        description: "Moeda que será convertida."
+        tests:
+          - not_null
+      - name: tocurrency
+        description: "Moeda para a qual será convertida."
+      - name: exchange
+        description: "Valor da conversão."
