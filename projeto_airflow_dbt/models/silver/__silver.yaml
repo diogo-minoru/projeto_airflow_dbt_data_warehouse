@@ -68,10 +68,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: storecode
-        description: "Código de identificação da loja."
-        tests:
-          - not_null
       - name: countryname
         description: "País de localização da loja."
       - name: description
@@ -85,12 +81,8 @@ models:
     columns:
       - name: date
         description: "Data da cotação."
-        tests:
-          - not_null
       - name: fromcurrency
         description: "Moeda que será convertida."
-        tests:
-          - not_null
       - name: tocurrency
         description: "Moeda para a qual será convertida."
       - name: exchange

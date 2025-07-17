@@ -11,5 +11,5 @@ with currencyexchange_silver as (
 		Exchange
 	from {{ref("currencyexchange_bronze")}})
 
-sellect *
+select *
 from currencyexchange_silver

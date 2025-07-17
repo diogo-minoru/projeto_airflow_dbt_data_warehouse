@@ -9,7 +9,7 @@ with store_gold as (
 		a.CountryName,
 		a.Description,
 		a.State		
-    from {{ref("store_silver")}}
+    from {{ref("store_silver")}} a
 )
 
 select *

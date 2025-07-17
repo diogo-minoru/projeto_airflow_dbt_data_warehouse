@@ -11,5 +11,5 @@ with currencyexchange_bronze as (
 		Exchange
 	from public.currencyexchange)
 
-sellect *
+select *
 from currencyexchange_bronze
