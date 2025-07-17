@@ -11,7 +11,7 @@ with orderrows_bronze as (
 		Quantity,
 		NetPrice,
 		UnitCost
-	from Data.orderrows)
+	from public.orderrows)
 
 select *
 from orderrows_bronze

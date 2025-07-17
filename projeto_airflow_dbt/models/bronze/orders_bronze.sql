@@ -11,7 +11,7 @@ with orders_bronze as (
 		OrderDate,
 		StoreKey,
 		CurrencyCode
-	from data.orders)
+	from public.orders)
 
 select *
 from orders_bronze

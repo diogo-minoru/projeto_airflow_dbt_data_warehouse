@@ -12,7 +12,7 @@ with store_bronze as (
 		Description,
 		State,
 		Status
-	from data.store)
+	from public.store)
 
 select *
 from store_bronze

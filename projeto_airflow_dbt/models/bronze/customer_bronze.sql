@@ -13,7 +13,7 @@ with customer_bronze as (
         StateFull,
         CountryFull,
         Age
-    from data.customer)
+    from public.customer)
 
 select *
 from customer_bronze

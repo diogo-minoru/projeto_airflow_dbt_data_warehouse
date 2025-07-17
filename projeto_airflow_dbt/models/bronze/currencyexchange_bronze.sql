@@ -9,7 +9,7 @@ with currencyexchange_bronze as (
 		FromCurrency,
 		ToCurrency,
 		Exchange
-	from data.currencyexchange)
+	from public.currencyexchange)
 
 sellect *
 from currencyexchange_bronze
