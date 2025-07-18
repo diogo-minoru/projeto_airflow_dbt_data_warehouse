@@ -4,15 +4,15 @@
     )
 }}
 
-with total_revenue_by_date as (
-    select b.orderdate,
-           sum(a.total_net_order_usd) as net_order_usd,
-           sum(a.total_net_cost_usd) as net_cost_usd,
-           sum(a.total_net_profit_usd) as nt_profit_usd
-    from {{ref("orderrows_silver")}} a
-    join {{ref("orders_silver")}} b on a.orderkey = b.orderkey
-    group by b.orderdate
+with customer_gold as (
+    select a.CustomerKey,
+        a.givenname || ' ' || a.surname as customer_name,
+        a.City,
+        a.StateFull,
+        a.CountryFull,
+        a.age_group
+    from {{ref("customer_silver")}} a
 )
 
 select *
-from total_revenue_by_date
+from customer_gold
