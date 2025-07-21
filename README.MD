@@ -20,7 +20,7 @@ Com o dbt, é possível transformar dados brutos em modelos analíticos confiáv
 - **Testes de qualidade:** validação de integridade e consistência dos dados.  
 - **Documentação automatizada:** geração de documentação interativa dos modelos.
 
-![DBT](/2_data_warehouse/dbt.png)
+![DBT](dbt.png)
 
 ## Esquema Medallion
 
@@ -41,7 +41,7 @@ As camadas principais são:
 
 Essa abordagem facilita a governança e rastreabilidade dos dados, além de permitir que cada camada seja validada antes de avançar para a próxima.
 
-![Medallion](/2_data_warehouse/medallion.png)
+![Medallion](medallion.png)
 
 ### **Estrutura do projeto:**
 Abaixo, segue a estrutura das pastas, criado pelo próprio dbt pelo comando `dbt init`. Para organizar as transformações de forma clara e escalável, foi adotado o esquema Medallion dentro da pasta models:
@@ -67,7 +67,7 @@ Os dados utilizados consiste em dados de demonstração do modelo Contoso, dispo
 
 
 **Diagrama Entidade Relacionamento Antes do ETL**
-![ERD](/2_data_warehouse/erd_antes.png)
+![ERD](erd_antes.png)
 
 **Principais transformações realizadas**
 1. **Conversão dos valores dos pedidos**
@@ -128,7 +128,7 @@ Utilizando o pacote de utilizades do dbt `dbt_utils.date_spine`, é possível cr
 ```
 
 **Diagrama Entidade Relacionamento Depois do ETL**
-![ERD](/2_data_warehouse/erd_depois.png)
+![ERD](erd_depois.png)
 
 ## Execução do dbt
 
